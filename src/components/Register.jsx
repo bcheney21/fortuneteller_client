@@ -6,8 +6,7 @@ import Profile from './Profile'
 
 
 export default function Register(props) {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')  
   const [password, setPassword] = useState('')
 
   const [message, setMessage] = useState('')
@@ -16,8 +15,7 @@ export default function Register(props) {
     try {
       e.preventDefault()
       const requestBody = {
-        username: username,
-        email: email,
+        username: username,        
         password: password
       }
 
@@ -55,16 +53,7 @@ export default function Register(props) {
           placeholder='Enter your username'
           onChange={e => setUsername(e.target.value)}
           value={username}
-        />
-
-        <label htmlFor='email-input'>Email</label>
-        <input 
-          id='email-input'
-          type='email'
-          placeholder='user@domain.com'
-          onChange={e => setEmail(e.target.value)}
-          value={email}
-        /> 
+        />        
 
         <label htmlFor='password-input'>Password</label>
         <input 
