@@ -30,11 +30,12 @@ export default function Register(props) {
 
     } catch (error) {
       if(error.response.status === 400) {
+        console.log (error.response)
         setMessage(error.response.data.msg)
       } else {
         console.log(error)
       }
-      console.log(error)
+      
     }
   }
 
