@@ -70,8 +70,14 @@ Erin
 
 ### Sprints:
 
-Est. of day 1- Create a repo, and the whole group interacts with is. Structure the site (lay it out), and place
-routes. Structure Crystal Ball modules in db.
+March 22nd- Structure the site (lay it out), and place routes. start mernAuth and add wisdom to local db's.
+
+March 23rd: Check to see if main file structuring/routes & mernAuth work universally. Add seederfile/hard coded quotes to wisdom files.
+
+March 24th: Semuel- match mernAuth jwt with matching name & password to log in after registering. Brinn & Nakisha- forcus on page layout and front & back end communication. Erin- make sure data is being saved correctly, look into user's wisdom table and how to show it on user's profile. Math.random quotes appearing in crystal ball. Styling.
+
+Next Step- Run test files on different computers, text all different pieces together after merge.
+\*\*\*\*By Wednesday we hope to hit MVP
 
 ### Routes:
 
