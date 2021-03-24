@@ -33,9 +33,11 @@ export default function Profile(props) {
 
   if (!props.currentUser) return <Redirect to="/login" component={Login} />;
 
+
   return (
     <div className="profile">
       <h4>hello {props.currentUser.name}</h4>
+
     </div>
   );
 }
