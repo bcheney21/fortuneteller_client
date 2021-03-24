@@ -1,3 +1,4 @@
+//IMPORTS//
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -7,19 +8,22 @@ import {
   Redirect,
 } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import "./App.css";
+
+//JSX IMPORTS//
 import Navbar from "./components/partials/Navbar.jsx";
 import Login from "./components/Login.jsx";
-// import Logout from './components/Logout.jsx'
+import Logout from "./components/Logout.jsx";
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
-import Home from "./components/Home.jsx";
-// import CrystalBall from "./components/CrystalBall";
-import "./App.css";
+import Welcome from "./components/Welcome.jsx";
 import CrystalBall from "./components/CrystalBall.jsx";
 
+//SET STATE//
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
+  //COMPARE JWT//
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
     if (token) {
@@ -40,9 +44,10 @@ const App = () => {
   return (
     <Router>
       <div className="main-div">
-        <Navbar />
+        <Navbar handleLogout={handleLogout} currentUser={currentUser}/>
         <Route exact path="/" component={Welcome} />
 
+        {/* ROUTE TO PROFILE */}
         <Route
           path="/profile"
           render={(props) =>
@@ -58,6 +63,8 @@ const App = () => {
             )
           }
         />
+
+        {/* ROUTE TO LOGIN */}
         <Route
           path="/login"
           render={(props) => (
@@ -68,6 +75,8 @@ const App = () => {
             />
           )}
         />
+
+        {/* ROUTE TO REGISTER */}
         <Route
           path="/register"
           render={(props) => (
@@ -78,6 +87,8 @@ const App = () => {
             />
           )}
         />
+
+        {/* ROUTE TO CRYSTAL BALL */}
         <Route
           path="/crystal-ball"
           render={(props) => (
