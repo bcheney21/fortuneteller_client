@@ -6,7 +6,6 @@ import Profile from "./Profile";
 import("../App.css");
 
 export default function Register(props) {
-  console.log(props)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -33,13 +32,13 @@ export default function Register(props) {
       props.setCurrentUser(decoded);
     } catch (error) {
       console.log(error)
-      // if(error.response.status === 400) {
-      //   console.log (error.response)
-      //   setMessage(error.response.data.msg)
+      if(error.response.status === 400) {
+        console.log (error.response)
+        setMessage(error.response.data.msg)
 
-      // } else {
-      //   console.log(error);
-      // }
+      } else {
+        console.log(error);
+      }
 
     }
   };

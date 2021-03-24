@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
-import { Redirect } from "react";
+import { Redirect } from "react-router-dom";
 import Profile from "./Profile";
 import axios from "axios";
 
@@ -31,11 +31,11 @@ export default function Login(props) {
 
       props.setCurrentUser(decoded);
     } catch (error) {
-      // if (error.response.status === 400) {
-      //   setMessage(error.response.data.msg);
-      // } else {
-      //   console.log(error);
-      // }
+      if (error.response.status === 400) {
+        setMessage(error.response.data.msg);
+      } else {
+        console.log(error);
+      }
     }
   };
 
@@ -48,7 +48,6 @@ export default function Login(props) {
       />
     );
 }
-console.log(props)
 
   return (
     <div className="login">

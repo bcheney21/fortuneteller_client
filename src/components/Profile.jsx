@@ -30,7 +30,7 @@ export default function Profile(props) {
     secretMessage();
   }, [props]);
 
-  // if (!props.currentUser) return <Redirect to="/login" component={Login} />;
+  if (!props.currentUser) return <Redirect to="/login" component={Login} />;
 
 
   return (
