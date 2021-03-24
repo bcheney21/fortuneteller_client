@@ -1,24 +1,95 @@
-.main-div {
-  outline: red 2px solid;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nothing+You+Could+Do&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+/*-------------FONTS IMPORTED FROM GOOGLE FONTS---------------*/
+/* font-family: 'Lobster', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Roboto', sans-serif; */
+/* font-family: 'Oi', cursive; */
+/*---------UNIVERSAL PAGES-----------------*/
+body {
+  background-color: rgb(0, 0, 87);
 }
+.main-div {
+  font-family: "Oi", cursive;
+}
+/*---------WELCOME PAGE-----------------*/
+.welcome {
+  background-color: blueviolet;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 50px;
+}
+/*---------REGISTER PAGE-----------------*/
 .register {
   background-color: aqua;
 }
-.profile {
-  background-color: cadetblue;
-}
-.crystalball {
-  background-color: rgb(18, 233, 133);
-}
-.navbar {
-  background-color: rgb(192, 213, 75);
-}
+/*---------LOGIN PAGE-----------------*/
 .login {
-  background-color: yellow;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: rgb(167, 86, 249);
+}
+.login-header {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+  padding: 50px 0 0 190px;
+}
+.login-form {
+  margin: 25px;
 }
 .logout {
   background-color: green;
 }
+/*---------PROFILE PAGE-----------------*/
+.profile {
+  background-color: cadetblue;
+}
+/*---------NAV BAR-----------------*/
+.navbar {
+  background-color: rgb(192, 213, 75);
+  text-align: center;
+  margin: 50px;
+}
+/*---------CRYSTAL BALL PAGE-----------------*/
+.crystalball {
+  background-color: rgb(120, 89, 215);
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+}
+/*---------BUTTONS-----------------*/
 .button {
-  background-color: rgb(225, 85, 225);
+  background-color: rgba(128, 0, 128, 0.591);
+  margin: 20px;
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  border-radius: 45%;
+  outline: none;
+  padding: 13px;
+  color: rgb(184, 154, 255);
+}
+.button:hover {
+  background-color: rgba(115, 145, 223, 0.625);
+  cursor: pointer;
+}
+.big-button {
+  font-size: 200px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.big-button:hover {
+  cursor: pointer;
+}
+/*---------MISC/UNIVERSAL----------------*/
+.link {
+  padding: 50px;
+  color: black;
+  font-size: 40px;
+  text-decoration: none;
+}
+.input-bar {
+  background-color: rgba(189, 183, 107, 0.358);
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 25px;
 }
