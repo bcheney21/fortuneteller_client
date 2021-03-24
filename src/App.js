@@ -13,7 +13,6 @@ import Login from "./components/Login.jsx";
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
 import Welcome from "./components/Welcome.jsx";
-// import CrystalBall from "./components/CrystalBall";
 import "./App.css";
 import CrystalBall from "./components/CrystalBall.jsx";
 
@@ -37,32 +36,57 @@ const App = () => {
     }
   };
 
-
   return (
     <Router>
       <div className="main-div">
         <Navbar />
         <Route exact path="/" component={Welcome} />
 
-        <Route           
-          path="/profile" 
-          render={props => currentUser
-          ?<Profile {...props} handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
-          :<Redirect to="/login"/>}
-        /> 
-        <Route 
-          path="/login" 
-          render={props => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        <Route
+          path="/profile"
+          render={(props) =>
+            currentUser ? (
+              <Profile
+                {...props}
+                handleLogout={handleLogout}
+                setCurrentUser={setCurrentUser}
+                currentUser={currentUser}
+              />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/login"
+          render={(props) => (
+            <Login
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
         />
         <Route
           path="/register"
-          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+          render={(props) => (
+            <Register
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
         />
-            <Route
+        <Route
           path="/crystal-ball"
-          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+          render={(props) => (
+            <CrystalBall
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
         />
-
       </div>
     </Router>
   );
