@@ -1,3 +1,21 @@
 .main-div {
   outline: red 2px solid;
 }
+.register {
+  background-color: aqua;
+}
+.profile {
+  background-color: cadetblue;
+}
+.navbar {
+  background-color: rgb(192, 213, 75);
+}
+.login {
+  background-color: yellow;
+}
+.logout {
+  background-color: green;
+}
+.button {
+  background-color: rgb(225, 85, 225);
+}

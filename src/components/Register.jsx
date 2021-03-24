@@ -3,7 +3,7 @@ import { useState } from "react";
 import jwt_decode from "jwt-decode";
 import { Redirect } from "react-router-dom";
 import Profile from "./Profile";
-// import("../App.css");
+import("../App.css");
 
 export default function Register(props) {
   const [username, setUsername] = useState("");
@@ -49,7 +49,7 @@ export default function Register(props) {
     );
 
   return (
-    <div>
+    <div className="register">
       <h3>Register here! 😃</h3>
       <p>{message}</p>
 
@@ -72,7 +72,7 @@ export default function Register(props) {
           value={password}
         />
 
-        <input type="submit" value="Register" />
+        <input type="submit" value="Register" className="button" />
       </form>
     </div>
   );
