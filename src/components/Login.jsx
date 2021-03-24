@@ -53,7 +53,7 @@ export default function Login(props) {
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
 
-      <form onSubmit={handleSubmit} className="login-form">
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="username">username: </label>
         <input
           type="text"
