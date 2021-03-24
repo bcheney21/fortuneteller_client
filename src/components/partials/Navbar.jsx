@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   const loggedIn = (
     <>
-      <Link to="/">
+      <Link to="/" className="link">
         <span onClick={props.handleLogout}>Log out</span>
       </Link>
     </>
   );
   const loggedOut = (
     <>
-      <Link to="/login">
+      <Link to="/login" className="link">
         Login
       </Link>
     </>
-  )
+  );
+
   return (
     <nav className="navbar">
       <Link to="/" className="link">
