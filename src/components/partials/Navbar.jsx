@@ -10,8 +10,14 @@ export default function Navbar(props) {
   );
   return (
     <nav className="navbar">
-      <Link to="/">
-        <h5>Home 🏄🏾‍♀️</h5>
+      <Link to="/" className="link">
+        Home
+      </Link>
+      <Link to="/crystal-ball" className="link">
+        Crystal Ball
+      </Link>
+      <Link to="/logout" className="link">
+        Logout
       </Link>
 
       {props.currentUser}
