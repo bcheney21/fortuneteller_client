@@ -1,20 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+
 
 export default function Navbar(props) {
+  
   const loggedIn = (
     <>
-      <Link to="/">
-        <span onClick={props.handleLogout}>Log out</span>
+        <Link to='/'>
+          <span onClick={props.handleLogout}>Log out</span>
+        </Link>
+    
+        <Link to='/profile'>
+          Profile
+        </Link>
+      </>
+    )
+    
+    const loggedOut = (
+      <>
+      <Link to='/register'>
+        Register
       </Link>
-    </>
-  );
-  return (
-    <nav className="navbar">
-      <Link to="/">
-        <h5>Home 🏄🏾‍♀️</h5>
+    
+      <Link to='/login'>
+        Login
+      </Link>
+      </>
+    )
+    return(
+    <nav>
+      <Link to='/'>
+        <h5>user app 🏄🏾‍♀️</h5>
       </Link>
 
-      {props.currentUser}
+      {props.currentUser ? loggedIn : loggedOut}
     </nav>
-  );
+  )
 }

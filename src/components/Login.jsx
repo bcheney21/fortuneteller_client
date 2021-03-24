@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
-import { Redirect } from "react";
+import { Redirect } from "react-router-dom";
 import Profile from "./Profile";
 import axios from "axios";
 
@@ -18,6 +18,7 @@ export default function Login(props) {
         password: password,
       };
 
+
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`,
         requestBody
@@ -29,7 +30,7 @@ export default function Login(props) {
 
       const decoded = jwt_decode(token);
 
-      props.setCurrentUser(decoded);
+      props.currentUser(decoded);
     } catch (error) {
       if (error.response.status === 400) {
         setMessage(error.response.data.msg);
@@ -39,14 +40,14 @@ export default function Login(props) {
     }
   };
 
-  if (props.setCurrentUser)
+  if (props.currentUser) {
     return (
       <Redirect
         to="/profile"
         component={Profile}
-        setCurrentUser={props.setCurrentUser}
+        currentUser={props.currentUser}
       />
-    );
+    )};
 
   return (
     <div className="login">
@@ -55,13 +56,19 @@ export default function Login(props) {
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
-        <input type="text" value={props.username} placeholder="Username 🎠" />
+        <input 
+        type="text" 
+        value={username} 
+        placeholder="Username 🎠" 
+        onChange={e => setUsername(e.target.value)}
+        />
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          value={props.password}
+          value={password}
           placeholder="Password 🔐"
+          onChange={e => setPassword(e.target.value)}
         />
 
         <input type="submit" value="Log in here 😄" className="button" />

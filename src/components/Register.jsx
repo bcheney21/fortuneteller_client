@@ -43,14 +43,14 @@ export default function Register(props) {
     }
   };
 
-  if (props.setCurrentUser)
+  if (props.currentUser) {
     return (
       <Redirect
         to="/profile"
         component={Profile}
         currentUser={props.currentUser}
       />
-    );
+    )};
 
   return (
     <div className="register">

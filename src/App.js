@@ -42,9 +42,18 @@ const App = () => {
      <div>       
        <Navbar />
        <Route exact path="/" component={ Welcome } />
-       <Route path="/profile" component={ Profile } />
-       <Route path="/login" component={ Login } />       
-       <Route path="/register" component={ Register } /> 
+       <Route 
+       path="/profile" 
+       render={props => <Profile {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> } 
+       />
+       
+       <Route 
+       path="/login" component={ Login } />       
+       
+       <Route 
+        path="/register" 
+        render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/>} 
+       /> 
      </div>
    </Router>
   // <div>Hello World</div>
