@@ -45,7 +45,7 @@ const App = () => {
     <Router>
       <div className="main-div">
         <Navbar handleLogout={handleLogout} currentUser={currentUser}/>
-        <Route exact path="/" component={Welcome} />
+        <Route exact path="/" component={ Home } />
 
         {/* ROUTE TO PROFILE */}
         <Route
