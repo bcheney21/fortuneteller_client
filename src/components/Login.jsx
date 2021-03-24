@@ -55,7 +55,7 @@ export default function Login(props) {
       <p>{message}</p>
 
 
-      <form onSubmit={handleSubmit} className="login-form">
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="username">username: </label>
         <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="username" className="input-bar"/>
         <br />
