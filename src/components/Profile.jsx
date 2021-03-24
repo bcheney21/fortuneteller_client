@@ -34,7 +34,10 @@ export default function Profile(props) {
 
   return(
     <div>
-      <h4>hello {props.currentUser.name}</h4>
+      <h4>hello {props.currentUser.username}</h4>
+
+      
+
       
     </div>
   )
