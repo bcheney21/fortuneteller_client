@@ -35,12 +35,12 @@ export default function Register(props) {
         console.log(error.response);
         setMessage(error.response.data.msg);
       } else {
-        //console.log(error);
+        console.log(error);
       }
     }
   };
 
-  if (props.setCurrentUser)
+  if (props.currentUser) {
     return (
       <Redirect
         to="/profile"
@@ -48,6 +48,7 @@ export default function Register(props) {
         currentUser={props.currentUser}
       />
     );
+}
 
   return (
     <div className="register">

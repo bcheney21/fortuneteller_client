@@ -37,15 +37,32 @@ const App = () => {
     }
   };
 
+
   return (
     <Router>
       <div className="main-div">
         <Navbar />
         <Route exact path="/" component={Welcome} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/crystal-ball" component={CrystalBall} />
+
+        <Route           
+          path="/profile" 
+          render={props => currentUser
+          ?<Profile {...props} handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+          :<Redirect to="/login"/>}
+        /> 
+        <Route 
+          path="/login" 
+          render={props => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+        <Route
+          path="/register"
+          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+            <Route
+          path="/crystal-ball"
+          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+
       </div>
     </Router>
   );
