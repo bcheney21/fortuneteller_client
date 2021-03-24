@@ -41,7 +41,7 @@ const App = () => {
     <Router>
       <div className="main-div">
         <Navbar />
-        <Route exact path="/" component={Welcome} />
+        <Route exact path="/" component={ Home } />
 
         <Route
           path="/profile"
