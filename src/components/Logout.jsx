@@ -1,7 +1,3 @@
 export default function Logout(props) {
-  return(
-    <div>
-      hello from logout!
-    </div>
-  )
+  return <div className="logout">hello from logout!</div>;
 }

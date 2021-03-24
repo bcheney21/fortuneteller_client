@@ -1,47 +1,43 @@
-
-import { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
-import Login from './Login'
-
+import { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import Login from "./Login";
 
 export default function Profile(props) {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const secretMessage = async function() {
+    const secretMessage = async function () {
       try {
-        const token = localStorage.getItem('jwtToken')
+        const token = localStorage.getItem("jwtToken");
         const authHeaders = {
-          'Authorization': token
-        }
+          Authorization: token,
+        };
 
-        const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth-v1/users/auth-locked`, authHeaders)
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/auth-v1/users/auth-locked`,
+          authHeaders
+        );
 
-        setMessage(response.data.msg)
-
+        setMessage(response.data.msg);
       } catch (error) {
-        if(error.response.status === 400) {
-          props.handleLogout()        
-        
+        if (error.response.status === 400) {
+          props.handleLogout();
         } else {
-          console.log (error)
+          console.log(error);
         }
       }
-    }
-    secretMessage()
-  }, [props])
+    };
+    secretMessage();
+  }, [props]);
 
-  if(!props.currentUser) return <Redirect to='/login' component={ Login } />
+  if (!props.currentUser) return <Redirect to="/login" component={Login} />;
 
-  return(
-    <div>
-      <h4>hello {props.currentUser.username}</h4>
 
-      
+  return (
+    <div className="profile">
+      <h4>hello {props.currentUser.name}</h4>
 
-      
     </div>
-  )
-  
+  );
 }
