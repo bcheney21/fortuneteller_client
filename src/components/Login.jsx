@@ -17,8 +17,7 @@ export default function Login(props) {
         username: username,
         password: password,
       };
-
-
+      
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`,
         requestBody
@@ -47,13 +46,14 @@ export default function Login(props) {
         component={Profile}
         currentUser={props.currentUser}
       />
-    )};
+    );
+}
 
   return (
     <div className="login">
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
-
+    
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input 

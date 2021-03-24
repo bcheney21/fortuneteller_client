@@ -35,38 +35,62 @@ const App = () => {
       localStorage.removeItem("jwtToken");
       setCurrentUser(null);
     }
+  };
 
-  }
+  return (
+    <Router>
+      <div className="main-div">
+        <Navbar />
+        <Route exact path="/" component={Welcome} />
 
-
-
-  return(
-  <Router>
-     <div>       
-       <Navbar />
-       <Route exact path="/" component={ Home } />
-       <Route 
-       path="/profile" 
-       render={props => <Profile {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> } 
-       />
-       
-       <Route 
-       path="/login" component={ Login } />       
-       
-       <Route 
-        path="/register" 
-        render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/>} 
-       /> 
-       
-       <Route 
-       path="/crystalball" component={ CrystalBall } />       
-     </div>
-   </Router>
-  // <div>Hello World</div>
-  )
- 
-}
-
-
+        <Route
+          path="/profile"
+          render={(props) =>
+            currentUser ? (
+              <Profile
+                {...props}
+                handleLogout={handleLogout}
+                setCurrentUser={setCurrentUser}
+                currentUser={currentUser}
+              />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/login"
+          render={(props) => (
+            <Login
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
+        />
+        <Route
+          path="/register"
+          render={(props) => (
+            <Register
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
+        />
+        <Route
+          path="/crystal-ball"
+          render={(props) => (
+            <CrystalBall
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}
+        />
+      </div>
+    </Router>
+  );
+};
 
 export default App;
