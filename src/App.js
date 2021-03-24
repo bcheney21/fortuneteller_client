@@ -1,18 +1,19 @@
-
-
-  
-import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
-import jwt_decode from 'jwt-decode'
-import Navbar from './components/partials/Navbar.jsx'
-import Login from './components/Login.jsx'
+import { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import Navbar from "./components/partials/Navbar.jsx";
+import Login from "./components/Login.jsx";
 // import Logout from './components/Logout.jsx'
-import Profile from './components/Profile.jsx'
-import Register from './components/Register.jsx'
-import Welcome from './components/Welcome.jsx'
-import './App.css';
-
-
+import Profile from "./components/Profile.jsx";
+import Register from "./components/Register.jsx";
+import Welcome from "./components/Welcome.jsx";
+import "./App.css";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -32,26 +33,20 @@ const App = () => {
       localStorage.removeItem("jwtToken");
       setCurrentUser(null);
     }
+  };
 
-  }
-
-
-
-  return(
-  <Router>
-     <div>       
-       <Navbar />
-       <Route exact path="/" component={ Welcome } />
-       <Route path="/profile" component={ Profile } />
-       <Route path="/login" component={ Login } />       
-       <Route path="/register" component={ Register } /> 
-     </div>
-   </Router>
-  // <div>Hello World</div>
-  )
- 
-}
-
-
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Route exact path="/" component={Welcome} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+      </div>
+    </Router>
+    // <div>Hello World</div>
+  );
+};
 
 export default App;
