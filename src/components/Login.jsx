@@ -61,20 +61,25 @@ export default function Login(props) {
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+      <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="username">username: </label>
         <input
           type="text"
           value={username}
-          placeholder="Username 🎠"
           onChange={(e) => setUsername(e.target.value)}
+          placeholder="username"
+          className="input-bar"
         />
 
-        <label htmlFor="password">Password</label>
+        <br />
+        <br />
+        <br />
+        <label htmlFor="password">password: </label>
         <input
           type="password"
           value={password}
-          placeholder="Password 🔐"
+          placeholder="password"
+          className="input-bar"
           onChange={(e) => setPassword(e.target.value)}
         />
 
