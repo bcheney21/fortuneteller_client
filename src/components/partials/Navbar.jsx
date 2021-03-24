@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
+import CrystalBall from "../CrystalBall";
 
 export default function Navbar(props) {
   
@@ -24,12 +24,15 @@ export default function Navbar(props) {
       <Link to='/login'>
         Login
       </Link>
-      </>
-    )
-    return(
-    <nav>
-      <Link to='/'>
-        <h5>user app 🏄🏾‍♀️</h5>
+    </>
+  );
+  return (
+    <nav className="navbar">
+      <Link to="/" className="link">
+        Home
+      </Link>
+      <Link to="/crystal-ball" className="link">
+        Crystal Ball
       </Link>
 
       {props.currentUser ? loggedIn : loggedOut}
