@@ -13,7 +13,9 @@ import Login from "./components/Login.jsx";
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
 import Welcome from "./components/Welcome.jsx";
+// import CrystalBall from "./components/CrystalBall";
 import "./App.css";
+import CrystalBall from "./components/CrystalBall.jsx";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -38,9 +40,10 @@ const App = () => {
 
   return (
     <Router>
-      <div>
+      <div className="main-div">
         <Navbar />
         <Route exact path="/" component={Welcome} />
+
         <Route           
           path="/profile" 
           render={props => currentUser
@@ -55,9 +58,13 @@ const App = () => {
           path="/register"
           render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
         />
+            <Route
+          path="/crystal-ball"
+          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+
       </div>
     </Router>
-    // <div>Hello World</div>
   );
 };
 
