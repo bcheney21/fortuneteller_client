@@ -29,7 +29,7 @@ export default function Login(props) {
 
       const decoded = jwt_decode(token);
 
-      props.setCurrentUser(decoded);
+      props.currentUser(decoded);
     } catch (error) {
       if (error.response.status === 400) {
         setMessage(error.response.data.msg);
@@ -53,21 +53,22 @@ export default function Login(props) {
     <div className="login">
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
+    
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Username</label>
+        <input 
+        type="text" 
+        value={username} 
+        placeholder="Username 🎠" 
+        onChange={e => setUsername(e.target.value)}
+        />
 
-
-      <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="username">username: </label>
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="username" className="input-bar"/>
-        <br />
-        <br />
-        <br />
-        <label htmlFor="password">password: </label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           value={password}
+          placeholder="Password 🔐"
           onChange={e => setPassword(e.target.value)}
-          placeholder="password"
-          className="input-bar"
         />
 
         <input type="submit" value="submit" className="button" />

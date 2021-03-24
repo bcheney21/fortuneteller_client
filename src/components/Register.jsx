@@ -47,8 +47,7 @@ export default function Register(props) {
         component={Profile}
         currentUser={props.currentUser}
       />
-    );
-}
+    )};
 
   return (
     <div className="register">
