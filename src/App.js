@@ -12,7 +12,7 @@ import Login from "./components/Login.jsx";
 // import Logout from './components/Logout.jsx'
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
-import Welcome from "./components/Welcome.jsx";
+import Home from "./components/Home.jsx";
 // import CrystalBall from "./components/CrystalBall";
 import "./App.css";
 import CrystalBall from "./components/CrystalBall.jsx";
@@ -44,7 +44,7 @@ const App = () => {
   <Router>
      <div>       
        <Navbar />
-       <Route exact path="/" component={ Welcome } />
+       <Route exact path="/" component={ Home } />
        <Route 
        path="/profile" 
        render={props => <Profile {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> } 
