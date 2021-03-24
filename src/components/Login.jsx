@@ -28,15 +28,16 @@ export default function Login(props) {
         `${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`,
         requestBody
       );
-
+      // console.log(response);
       const { token } = response.data;
-
+      console.log(token);
       localStorage.setItem("jwtToken", token);
 
       const decoded = jwt_decode(token);
-
-      props.currentUser(decoded);
+      console.log(decoded);
+      props.setCurrentUser(decoded);
     } catch (error) {
+      console.log(error);
       if (error.response.status === 400) {
         setMessage(error.response.data.msg);
       } else {
