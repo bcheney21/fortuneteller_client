@@ -8,6 +8,13 @@ export default function Navbar(props) {
       </Link>
     </>
   );
+  const loggedOut = (
+    <>
+      <Link to="/login">
+        Login
+      </Link>
+    </>
+  )
   return (
     <nav className="navbar">
       <Link to="/" className="link">
@@ -16,11 +23,7 @@ export default function Navbar(props) {
       <Link to="/crystal-ball" className="link">
         Crystal Ball
       </Link>
-      <Link to="/logout" className="link">
-        Logout
-      </Link>
-
-      {props.currentUser}
+      {props.currentUser ? loggedIn: loggedOut}
     </nav>
   );
 }
