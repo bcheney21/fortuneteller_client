@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
-import { Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Profile from "./Profile";
 import axios from "axios";
 
@@ -17,20 +23,21 @@ export default function Login(props) {
         username: username,
         password: password,
       };
-      
+
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`,
         requestBody
       );
-
+      // console.log(response);
       const { token } = response.data;
-
+      console.log(token);
       localStorage.setItem("jwtToken", token);
 
       const decoded = jwt_decode(token);
-
-      props.currentUser(decoded);
+      console.log(decoded);
+      props.setCurrentUser(decoded);
     } catch (error) {
+      console.log(error);
       if (error.response.status === 400) {
         setMessage(error.response.data.msg);
       } else {
@@ -47,28 +54,33 @@ export default function Login(props) {
         currentUser={props.currentUser}
       />
     );
-}
+  }
 
   return (
     <div className="login">
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
-    
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input 
-        type="text" 
-        value={username} 
-        placeholder="Username 🎠" 
-        onChange={e => setUsername(e.target.value)}
+
+      <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="username">username: </label>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="username"
+          className="input-bar"
         />
 
-        <label htmlFor="password">Password</label>
+        <br />
+        <br />
+        <br />
+        <label htmlFor="password">password: </label>
         <input
           type="password"
           value={password}
-          placeholder="Password 🔐"
-          onChange={e => setPassword(e.target.value)}
+          placeholder="password"
+          className="input-bar"
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <input type="submit" value="submit" className="button" />

@@ -16,7 +16,10 @@ import Login from "./components/Login.jsx";
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
 import Home from "./components/Home.jsx";
+<<<<<<< HEAD
 import "./App.css";
+=======
+>>>>>>> 1b27fa2dcce04cbe178fa663dde1e0bd7770ab19
 import CrystalBall from "./components/CrystalBall.jsx";
 
 //SET STATE//
@@ -44,8 +47,13 @@ const App = () => {
   return (
     <Router>
       <div className="main-div">
+<<<<<<< HEAD
         <Navbar handleLogout={handleLogout} currentUser={currentUser}/>
         <Route exact path="/" component={ Home } />
+=======
+        <Navbar handleLogout={handleLogout} currentUser={currentUser} />
+        <Route exact path="/" component={Home} />
+>>>>>>> 1b27fa2dcce04cbe178fa663dde1e0bd7770ab19
 
         {/* ROUTE TO PROFILE */}
         <Route
