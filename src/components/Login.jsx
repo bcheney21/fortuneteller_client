@@ -54,7 +54,6 @@ export default function Login(props) {
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
 
-<<<<<<< HEAD
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input 
@@ -62,15 +61,6 @@ export default function Login(props) {
         value={username} 
         placeholder="Username 🎠" 
         onChange={e => setUsername(e.target.value)}
-=======
-      <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="username">username: </label>
-        <input
-          type="text"
-          value={props.username}
-          placeholder="username"
-          className="input-bar"
->>>>>>> 672403f774a808b490f73e8234e3c6551b6f884f
         />
 
         <label htmlFor="password">Password</label>
