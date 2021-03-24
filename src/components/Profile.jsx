@@ -15,8 +15,7 @@ export default function Profile(props) {
         };
 
         const response = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/auth-v1/users/auth-locked`,
-          authHeaders
+          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,{headers: authHeaders}
         );
 
         setMessage(response.data.msg);
@@ -31,12 +30,12 @@ export default function Profile(props) {
     secretMessage();
   }, [props]);
 
-  if (!props.currentUser) return <Redirect to="/login" component={Login} />;
+  // if (!props.currentUser) return <Redirect to="/login" component={Login} />;
 
 
   return (
     <div className="profile">
-      <h4>hello {props.currentUser.name}</h4>
+      <h4>hello {props.currentUser.username}</h4>
 
     </div>
   );

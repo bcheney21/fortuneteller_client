@@ -17,7 +17,7 @@ export default function Login(props) {
         username: username,
         password: password,
       };
-
+      
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`,
         requestBody
@@ -31,22 +31,24 @@ export default function Login(props) {
 
       props.setCurrentUser(decoded);
     } catch (error) {
-      if (error.response.status === 400) {
-        setMessage(error.response.data.msg);
-      } else {
-        console.log(error);
-      }
+      // if (error.response.status === 400) {
+      //   setMessage(error.response.data.msg);
+      // } else {
+      //   console.log(error);
+      // }
     }
   };
 
-  if (props.setCurrentUser)
+  if (props.currentUser) {
     return (
       <Redirect
         to="/profile"
         component={Profile}
-        setCurrentUser={props.setCurrentUser}
+        currentUser={props.currentUser}
       />
     );
+}
+console.log(props)
 
   return (
     <div className="login">
@@ -55,12 +57,13 @@ export default function Login(props) {
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
-        <input type="text" value={props.username} placeholder="Username 🎠" />
+        <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username 🎠" />
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          value={props.password}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
           placeholder="Password 🔐"
         />
 

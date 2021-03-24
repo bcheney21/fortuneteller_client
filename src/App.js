@@ -16,6 +16,7 @@ import Welcome from "./components/Welcome.jsx";
 import "./App.css";
 
 const App = () => {
+  console.log(Login)
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -35,14 +36,24 @@ const App = () => {
     }
   };
 
+
   return (
     <Router>
       <div>
         <Navbar />
         <Route exact path="/" component={Welcome} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route           
+          path="/profile" 
+          render={props => <Profile {...props} handleLogout={handleLogout} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+        <Route 
+          path="/login" 
+          render={props => <Login {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
+        <Route
+          path="/register"
+          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+        />
       </div>
     </Router>
     // <div>Hello World</div>
