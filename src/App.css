@@ -21,8 +21,16 @@ body {
 }
 /*---------REGISTER PAGE-----------------*/
 .register {
-  background-color: aqua;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: rgb(167, 86, 249);
 }
+.register-header {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+  padding: 50px 0 0 190px;
+}
+
 /*---------LOGIN PAGE-----------------*/
 .login {
   font-family: "Roboto", sans-serif;
@@ -34,19 +42,13 @@ body {
   font-size: 40px;
   padding: 50px 0 0 190px;
 }
-.login-form {
-  margin: 25px;
-}
-.logout {
-  background-color: green;
-}
 /*---------PROFILE PAGE-----------------*/
 .profile {
   background-color: cadetblue;
 }
 /*---------NAV BAR-----------------*/
 .navbar {
-  background-color: rgb(192, 213, 75);
+  background-color: rgba(192, 213, 75, 0.653);
   text-align: center;
   margin: 50px;
 }
@@ -56,6 +58,10 @@ body {
   text-align: center;
   font-family: "Lobster", cursive;
   font-size: 50px;
+}
+/*---------LOGOUT PAGE-----------------*/
+.logout {
+  background-color: green;
 }
 /*---------BUTTONS-----------------*/
 .button {
@@ -92,4 +98,7 @@ body {
   background-color: rgba(189, 183, 107, 0.358);
   font-family: "Nothing You Could Do", cursive;
   font-size: 25px;
+}
+.form {
+  margin: 25px;
 }

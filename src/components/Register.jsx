@@ -23,7 +23,6 @@ export default function Register(props) {
         requestBody
       );
 
-
       const { token } = response.data;
       localStorage.setItem("jwtToken", token);
 
@@ -31,15 +30,13 @@ export default function Register(props) {
 
       props.setCurrentUser(decoded);
     } catch (error) {
-      console.log(error)
-      if(error.response.status === 400) {
-        console.log (error.response)
-        setMessage(error.response.data.msg)
-
+      console.log(error);
+      if (error.response.status === 400) {
+        console.log(error.response);
+        setMessage(error.response.data.msg);
       } else {
         //console.log(error);
       }
-
     }
   };
 
@@ -54,26 +51,30 @@ export default function Register(props) {
 
   return (
     <div className="register">
-      <h3>Register here! 😃</h3>
+      <h3 className="register-header">Register</h3>
       <p>{message}</p>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username-input">Username</label>
+      <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="username-input">username </label>
         <input
           id="username-input"
           type="text"
-          placeholder="Enter your username"
+          placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
+          className="input-bar"
         />
-
-        <label htmlFor="password-input">Password</label>
+        <br />
+        <br />
+        <br />
+        <label htmlFor="password-input">password </label>
         <input
           id="password-input"
           type="password"
-          placeholder="Enter your password"
+          placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          className="input-bar"
         />
 
         <input type="submit" value="Register" className="button" />
