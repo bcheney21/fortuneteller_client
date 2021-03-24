@@ -23,6 +23,7 @@ export default function Register(props) {
         requestBody
       );
 
+
       const { token } = response.data;
       localStorage.setItem("jwtToken", token);
 
@@ -30,13 +31,13 @@ export default function Register(props) {
 
       props.setCurrentUser(decoded);
     } catch (error) {
-
+      console.log(error)
       if(error.response.status === 400) {
         console.log (error.response)
         setMessage(error.response.data.msg)
 
       } else {
-        console.log(error);
+        //console.log(error);
       }
 
     }
