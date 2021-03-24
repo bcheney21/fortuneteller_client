@@ -1,4 +1,5 @@
 
+
   
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
@@ -13,27 +14,25 @@ import './App.css';
 
 
 
-
-
 const App = () => {
-
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('jwtToken')
-    if(token) {
-      const decoded = jwt_decode(token)
-      setCurrentUser(decoded)
+    const token = localStorage.getItem("jwtToken");
+    if (token) {
+      const decoded = jwt_decode(token);
+      setCurrentUser(decoded);
     } else {
-      setCurrentUser(null)
+      setCurrentUser(null);
     }
-  }, [])
+  }, []);
 
   const handleLogout = () => {
-    if(localStorage.getItem('jwtToken')) {
-      localStorage.removeItem('jwtToken')
-      setCurrentUser(null)
+    if (localStorage.getItem("jwtToken")) {
+      localStorage.removeItem("jwtToken");
+      setCurrentUser(null);
     }
+
   }
 
 
@@ -52,6 +51,7 @@ const App = () => {
   )
  
 }
+
 
 
 export default App;
