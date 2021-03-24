@@ -5,6 +5,7 @@ export default function CrystalBall(props) {
       <h1>
         <button className="big-button">🔮</button>
       </h1>
+      <h3 className="wisdom"></h3>
     </div>
   );
 }
