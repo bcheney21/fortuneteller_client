@@ -1,3 +1,4 @@
+
   
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
@@ -11,7 +12,11 @@ import Welcome from './components/Welcome.jsx'
 import './App.css';
 
 
+
+
+
 const App = () => {
+
   const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
@@ -47,5 +52,6 @@ const App = () => {
   )
  
 }
+
 
 export default App;
