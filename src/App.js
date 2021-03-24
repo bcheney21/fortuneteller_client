@@ -59,8 +59,8 @@ const App = () => {
           render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
         />
             <Route
-          path="/crystal-ball"
-          render={props => <Register {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+          path="/CrystalBall"
+          render={props => <CrystalBall {...props} setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
         />
 
       </div>
