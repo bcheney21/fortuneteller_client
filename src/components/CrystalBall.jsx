@@ -11,7 +11,7 @@ export default function CrystalBall(props) {
   };
 
   return (
-    <div className="crystalball">
+    <div className="crystal-ball">
       <h3>Come to see your future?</h3>
       <h4 className="wisdom">{currentWisdom}</h4>
       <h1>
