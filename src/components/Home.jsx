@@ -1,5 +1,5 @@
 //IMPORTS//
-import Register from './Register'
+import Register from "./Register";
 import madame from "../public/hands.gif";
 
 export default function Home(props) {
