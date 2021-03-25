@@ -74,10 +74,15 @@ body {
 
 /*---------CRYSTAL BALL PAGE-----------------*/
 .crystal-ball {
-  color: rgb(184, 154, 255);
+  color: rgb(211, 255, 154);
   text-align: center;
   font-family: "Lobster", cursive;
   font-size: 50px;
+}
+.future-banner {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.153),
+    0 0 20px rgba(255, 255, 255, 0.44), 0 0 30px #7da728, 0 0 40px #aaf443,
+    0 0 50px #00e613, 0 0 60px #7db070, 0 0 70px #81bb30;
 }
 .big-button {
   font-size: 300px;
@@ -91,6 +96,7 @@ body {
 .wisdom {
   font-family: "Nothing You Could Do", cursive;
   font-size: 30px;
+  color: white;
 }
 
 /*---------LOGOUT PAGE-----------------*/
