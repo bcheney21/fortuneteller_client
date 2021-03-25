@@ -1,7 +1,11 @@
+//IMPORTS//
+import madame from "../public/hands.gif";
+
 export default function Home(props) {
   return (
-    <div className="welcome">
-      <h4>💫 Welcome to Madame's Parlor of Fortune! 💫</h4>
+    <div className="home">
+      <h4 className="opening-banner">Madame's Parlor of Fortune</h4>
+      <img src={madame} className="hands-img" />
     </div>
   );
 }

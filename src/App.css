@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nothing+You+Could+Do&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+
 /*-------------FONTS IMPORTED FROM GOOGLE FONTS---------------*/
 /* font-family: 'Lobster', cursive;
 font-family: 'Nothing You Could Do', cursive;
@@ -15,11 +16,19 @@ body {
 }
 
 /*---------WELCOME PAGE-----------------*/
-.welcome {
-  background-color: blueviolet;
+.home {
   font-family: "Lobster", cursive;
   text-align: center;
-  font-size: 50px;
+  font-size: 70px;
+  color: rgb(221, 250, 174);
+}
+.hands-img {
+  filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(100deg);
+}
+.opening-banner {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.153),
+    0 0 20px rgba(255, 255, 255, 0.44), 0 0 30px #7da728, 0 0 40px #aaf443,
+    0 0 50px #00e613, 0 0 60px #7db070, 0 0 70px #81bb30;
 }
 /*---------REGISTER PAGE-----------------*/
 .register {
