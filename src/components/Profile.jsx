@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
-
 export default function Profile(props) {
   const [message, setMessage] = useState("");
 
@@ -15,7 +14,9 @@ export default function Profile(props) {
         };
 
         const response = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`, {headers: authHeaders});
+          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,
+          { headers: authHeaders }
+        );
 
         setMessage(response.data.msg);
       } catch (error) {
@@ -31,11 +32,12 @@ export default function Profile(props) {
 
   //if (!props.currentUser) return <Redirect to="/login" component={Login} />;
 
-
   return (
     <div className="profile">
-      <h4>hello {props.currentUser.username}</h4>
-
+      <h4>Hello {props.currentUser.username}. I was expecting you.</h4>
+      <div className="saved-wisdom">
+        <h2>{props.currentUser.quotes}</h2>
+      </div>
     </div>
   );
 }

@@ -24,7 +24,10 @@ export default function Navbar(props) {
       <Link to="/crystal-ball" className="link">
         Crystal Ball
       </Link>
-      {props.currentUser ? loggedIn: loggedOut}
+      <Link to="/profile" className="link">
+        Profile
+      </Link>
+      {props.currentUser ? loggedIn : loggedOut}
     </nav>
   );
 }

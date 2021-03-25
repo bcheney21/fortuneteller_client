@@ -6,8 +6,8 @@ export default function Home(props) {
   return (
     <div className="home">
       <h4 className="opening-banner">Madame's Parlor of Fortune</h4>
-      <img src={madame} className="hands-img" />
       <Register />
+      <img src={madame} className="hands-img" />
     </div>
   );
 }

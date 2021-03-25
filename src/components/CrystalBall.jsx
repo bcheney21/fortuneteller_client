@@ -1,14 +1,16 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { quotes } from "../public/quotes.json";
 export default function CrystalBall(props) {
   const [currentWisdom, setCurrentWisdom] = useState("");
-  // console.log({ quotes });
-  const getRandomQuote = (e) => {
-    e.preventDefault();
+
+  //GENERATE RANDOM WISDOM//
+  const getRandomQuote = () => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     return randomQuote.quote;
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.post(
@@ -36,7 +38,9 @@ export default function CrystalBall(props) {
       </h1>
       <form onSubmit={handleSubmit}>
         <input type="hidden" value={currentWisdom} />
-        <input type="submit" />
+        <Link to={"/profile"}>
+          <input type="submit" value="Save Wisdom" className="button" />
+        </Link>
       </form>
     </div>
   );
