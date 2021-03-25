@@ -13,7 +13,6 @@ import "./App.css";
 //JSX IMPORTS//
 import Navbar from "./components/partials/Navbar.jsx";
 import Login from "./components/Login.jsx";
-import Logout from "./components/Logout.jsx";
 import Profile from "./components/Profile.jsx";
 import Register from "./components/Register.jsx";
 import Home from "./components/Home.jsx";
