@@ -12,7 +12,7 @@ export default function CrystalBall(props) {
 
   return (
     <div className="crystal-ball">
-      <h3>Come to see your future?</h3>
+      <h3 className="future-banner">Come to see your future?</h3>
       <h4 className="wisdom">{currentWisdom}</h4>
       <h1>
         <button
@@ -25,6 +25,10 @@ export default function CrystalBall(props) {
           🔮
         </button>
       </h1>
+
+      <form onSaveWisdom={this.handleSaveWisdom}>
+        <input type="hidden" value={saveWisdom} method="post" />
+      </form>
     </div>
   );
 }
