@@ -33,6 +33,7 @@ export default function CrystalBall(props) {
       <form onSubmit={handleSubmit}>
         <input type="hidden" value={currentWisdom} />
         <input type="submit"/>
+
       </form>
     </div>
   );
