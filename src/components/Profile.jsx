@@ -3,8 +3,15 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 export default function Profile(props) {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
+  const [quotes, setQuotes] = useState([]);
+  //get user id from state
+  const usersId = props.currentUser.id;
+  // console.log("🚽", usersId);
 
+  //use userId to query db (via axios) & get the user
+
+  //once we have  that user, we can map through the array
   useEffect(() => {
     const secretMessage = async function () {
       try {
@@ -13,12 +20,19 @@ export default function Profile(props) {
           Authorization: token,
         };
 
-        const response = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,
-          { headers: authHeaders }
-        );
+        // const response = await axios.get(
+        //   `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,
+        //   { headers: authHeaders }
+        // );
 
-        setMessage(response.data.msg);
+        const quotesFromDb = await axios.get(
+          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/${props.currentUser.id}/quotes`
+        );
+        console.log("🗣", quotesFromDb);
+
+        //setting States
+        setQuotes(quotesFromDb.data);
+        // setMessage(response.data.msg);
       } catch (error) {
         if (error.response.status === 400) {
           props.handleLogout();
@@ -30,14 +44,14 @@ export default function Profile(props) {
     secretMessage();
   }, [props]);
 
-  //if (!props.currentUser) return <Redirect to="/login" component={Login} />;
-
+  const newArray = quotes.map((quote, idx) => {
+    return <li>{quote.quote}</li>;
+  });
   return (
     <div className="profile">
       <h4>Hello {props.currentUser.username}. I was expecting you.</h4>
-      <div className="saved-wisdom">
-        <h2>{props.currentUser.quotes}</h2>
-      </div>
+
+      <ul>{newArray}</ul>
     </div>
   );
 }
