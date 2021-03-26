@@ -78,9 +78,9 @@ export default function Navbar(props) {
   return (
     <nav className="navbar">
       {props.currentUser ? profileIn : profileOut}
-      {props.currentUser ? loggedIn : loggedOut}
       {props.currentUser ? crystalBallIn : crystalBallOut}
       {!props.currentUser ? registerIn : ""}
+      {props.currentUser ? loggedIn : loggedOut}
     </nav>
   );
 }
