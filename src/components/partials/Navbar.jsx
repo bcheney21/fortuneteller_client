@@ -35,29 +35,6 @@ export default function Navbar(props) {
       </Link>
     </>
   );
-  const crystalBallOut = (
-    <>
-      <Link to="/" className="link">
-        <span onClick={props.handleLogout}></span>
-      </Link>
-    </>
-  );
-
-  //Functions to reveal Home in NavBar//
-  const homeIn = (
-    <>
-      <Link to="/home" className="link">
-        Home
-      </Link>
-    </>
-  );
-  const homeOut = (
-    <>
-      <Link to="/" className="link">
-        <span onClick={props.handleLogout}></span>
-      </Link>
-    </>
-  );
 
   //Functions to reveal Profile in NavBar//
   const profileIn = (
@@ -67,20 +44,13 @@ export default function Navbar(props) {
       </Link>
     </>
   );
-  const profileOut = (
-    <>
-      <Link to="/" className="link">
-        <span onClick={props.handleLogout}></span>
-      </Link>
-    </>
-  );
 
   return (
     <nav className="navbar">
-      {props.currentUser ? profileIn : profileOut}
-      {props.currentUser ? loggedIn : loggedOut}
-      {props.currentUser ? crystalBallIn : crystalBallOut}
+      {props.currentUser ? profileIn : ""}
+      {props.currentUser ? crystalBallIn : ""}
       {!props.currentUser ? registerIn : ""}
+      {props.currentUser ? loggedIn : loggedOut}
     </nav>
   );
 }
