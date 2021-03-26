@@ -40,6 +40,7 @@ export default function CrystalBall(props) {
           }}
         >
           <img src={spinningBall} />
+          <div className="inner-circle"></div>
         </button>
       </h1>
       {currentWisdom && (
