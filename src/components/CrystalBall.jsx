@@ -2,6 +2,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { quotes } from "../public/quotes.json";
+//Crystal Ball Gif//
+import spinningBall from "./crystal_ball.gif";
 
 export default function CrystalBall(props) {
   //SET STATE//
@@ -37,7 +39,8 @@ export default function CrystalBall(props) {
             setCurrentWisdom(randomQuote);
           }}
         >
-          🔮
+          <img src={spinningBall} />
+          <div className="inner-circle"></div>
         </button>
       </h1>
       {currentWisdom && (
