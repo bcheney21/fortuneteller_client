@@ -28,6 +28,8 @@ body {
 }
 .hands-img {
   filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(75deg);
+  position: relative;
+  top: -90px;
 }
 
 /*---------NEON GLOW FOR BANNERS-----------------*/
@@ -72,6 +74,7 @@ body {
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+
 /*---------REGISTER PAGE-----------------*/
 .register {
   font-family: "Roboto", sans-serif;
@@ -118,7 +121,13 @@ body {
 .navbar {
   font-family: "Monoton", cursive;
   text-align: center;
-  margin: 50px;
+  margin-top: 10px;
+}
+.link {
+  padding: 0 40px 0 40px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  text-decoration: none;
 }
 
 /*---------CRYSTAL BALL PAGE-----------------*/
@@ -128,7 +137,6 @@ body {
   font-family: "Lobster", cursive;
   font-size: 50px;
   background-image: url("./public/eyesclear.png");
-  /* filter: sepia(100%) saturate(300%) brightness(110%) hue-rotate(75deg); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -180,12 +188,6 @@ body {
 }
 
 /*---------MISC/UNIVERSAL----------------*/
-.link {
-  padding: 50px;
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-  text-decoration: none;
-}
 .input-bar {
   background-color: rgba(189, 183, 107, 0.358);
   font-family: "Nothing You Could Do", cursive;
