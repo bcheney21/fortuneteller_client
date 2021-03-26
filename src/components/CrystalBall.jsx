@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { quotes } from "../public/quotes.json";
 //Crystal Ball Gif//
-import spinningBall from "./crystal_ball.gif";
+import spinningBall from "../public/crystal_ball.gif";
 
 export default function CrystalBall(props) {
   //SET STATE//
