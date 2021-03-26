@@ -63,6 +63,13 @@ body {
   font-size: 40px;
   text-align: center;
 }
+.list {
+  text-align: left;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 30px;
+  color: white;
+  list-style-type: none;
+}
 
 /*---------NAV BAR-----------------*/
 .navbar {
