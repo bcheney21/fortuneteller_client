@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Register from "../Register";
 
 //Functions to reveal Login & Logout in NavBar//
 export default function Navbar(props) {
@@ -18,20 +19,13 @@ export default function Navbar(props) {
   );
 
   // //Functions to reveal Register in NavBar//
-  // const registerIn = (
-  //   <>
-  //     <Link to="/register" className="link">
-  //       Crystal Ball
-  //     </Link>
-  //   </>
-  // );
-  // const registerOut = (
-  //   <>
-  //     <Link to="/" className="link">
-  //       <span onClick={props.handleLogout}></span>
-  //     </Link>
-  //   </>
-  // );
+  const registerIn = (
+    <>
+      <Link to="/register" className="link">
+        Register
+      </Link>
+    </>
+  );
 
   //Functions to reveal Crystal Ball in NavBar//
   const crystalBallIn = (
@@ -86,7 +80,7 @@ export default function Navbar(props) {
       {props.currentUser ? profileIn : profileOut}
       {props.currentUser ? loggedIn : loggedOut}
       {props.currentUser ? crystalBallIn : crystalBallOut}
-      {props.currentUser ? homeIn : homeOut}
+      {!props.currentUser ? registerIn : ""}
     </nav>
   );
 }

@@ -45,7 +45,11 @@ export default function Profile(props) {
   }, [props]);
 
   const newArray = quotes.map((quote, idx) => {
-    return <li>{quote.quote}</li>;
+    return (
+      <li key={idx}>
+        {quote.quote} {new Date(quote.date).toLocaleString()}
+      </li>
+    );
   });
   return (
     <div className="profile">
