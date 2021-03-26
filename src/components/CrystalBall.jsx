@@ -1,11 +1,12 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { quotes } from "../public/quotes.json";
 
 export default function CrystalBall(props) {
   //SET STATE//
   const [currentWisdom, setCurrentWisdom] = useState("");
+  const history = useHistory();
 
   //GENERATE RANDOM WISDOM//
   const getRandomQuote = () => {
@@ -21,9 +22,9 @@ export default function CrystalBall(props) {
         quote: currentWisdom,
       }
     );
+    history.push("/profile");
   };
-  // console.log(props);
-  console.log("😏", currentWisdom);
+
   return (
     <div className="crystal-ball">
       <h3 className="future-banner">Come to see your future?</h3>
@@ -39,12 +40,12 @@ export default function CrystalBall(props) {
           🔮
         </button>
       </h1>
-      <form onSubmit={handleSubmit}>
-        <input type="hidden" value={currentWisdom} />
-        {/* <Link to={"/profile"}> */}
-        <input type="submit" value="Save Wisdom" className="button" />
-        {/* </Link> */}
-      </form>
+      {currentWisdom && (
+        <form onSubmit={handleSubmit}>
+          <input type="hidden" value={currentWisdom} />
+          <input type="submit" value="Save Wisdom" className="button" />
+        </form>
+      )}
     </div>
   );
 }
