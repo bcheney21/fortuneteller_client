@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import Profile from "./Profile";
 import axios from "axios";
-import Modal from './modals/CustomModal'
 
 export default function Login(props) {
   //SET STATE//
@@ -59,17 +58,6 @@ export default function Login(props) {
 
   return (
     <div className="login">
-      {
-  this.state.showModal &&
-  <Modal
-    closeTimeoutMS={200}
-    isOpen
-    contentLabel="modal"
-    onRequestClose={() => this.toggleModal()}
-  >
-    <h2>Add modal content here</h2>
-  </Modal>
-}
       <h3 className="login-header">Login</h3>
       <p>{message}</p>
 

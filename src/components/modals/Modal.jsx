@@ -7,13 +7,13 @@ const Modal = props => {
     <div className="modal">
       <div className="modal-content">
         <div className="modal-header">
-          <h4 className="modal-title">Modal title</h4>
+          <h4 className="modal-title">To Use the Crystal Ball:</h4>
         </div>
         <div className='modal-body'>
-          This is modal content
+        Think of a question you wish for the crystal ball to answer. Ask the ball your question, then click on it when you are ready for the answer.
         </div>
         <div className="modal-footer">
-          <button className="button">Close</button>
+          <button onClick={props.onClose} className="button">Close</button>
         </div>
       </div>
     </div>
