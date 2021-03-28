@@ -28,36 +28,14 @@ export default function CrystalBall(props) {
     );
     history.push("/profile");
   };
-
   return (
-    <div className="crystal-ball">
-      <h3 className="future-banner">Come to see your future?</h3>
-      <div className="modal">
+  <div className="container-eyes">
+      <div className="crystal-ball">
+        <h3 className="future-banner">Come to see your future?</h3>
+        <div className="modal">
         <button onClick={() => setShow(true)} className="button">Instructions</button>
         <Modal onClose={() => setShow(false)} show={show}/>
       </div>
-      <h4 className="wisdom">{currentWisdom}</h4>
-      <h1>
-        <button
-          className="big-button"
-          onClick={() => {
-            const randomQuote = getRandomQuote();
-            setCurrentWisdom(randomQuote);
-          }}
-        >
-          <img src={spinningBall} />
-          <div className="inner-circle"></div>
-        </button>
-      </h1>
-      {currentWisdom && (
-        <form onSubmit={handleSubmit}>
-          <input type="hidden" value={currentWisdom} />
-          <input type="submit" value="Save Wisdom" className="button" />
-        </form>
-      )}
-    <div className="container-eyes">
-      <div className="crystal-ball">
-        <h3 className="future-banner">Come to see your future?</h3>
         <h4 className="wisdom">{currentWisdom}</h4>
         <h1>
           <button
@@ -77,7 +55,6 @@ export default function CrystalBall(props) {
           </form>
         )}
       </div>
-
     </div>
   );
 }
