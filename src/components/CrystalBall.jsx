@@ -4,7 +4,7 @@ import { useState } from "react";
 import { quotes } from "../public/quotes.json";
 import Modal from "./modals/Modal"
 //Crystal Ball Gif//
-import spinningBall from "./crystal_ball.gif";
+import spinningBall from "../public/crystal_ball.gif";
 
 export default function CrystalBall(props) {
   //SET STATE//
@@ -55,6 +55,29 @@ export default function CrystalBall(props) {
           <input type="submit" value="Save Wisdom" className="button" />
         </form>
       )}
+    <div className="container-eyes">
+      <div className="crystal-ball">
+        <h3 className="future-banner">Come to see your future?</h3>
+        <h4 className="wisdom">{currentWisdom}</h4>
+        <h1>
+          <button
+            className="big-button"
+            onClick={() => {
+              const randomQuote = getRandomQuote();
+              setCurrentWisdom(randomQuote);
+            }}
+          >
+            <img src={spinningBall} />
+          </button>
+        </h1>
+        {currentWisdom && (
+          <form onSubmit={handleSubmit}>
+            <input type="hidden" value={currentWisdom} />
+            <input type="submit" value="Save Wisdom" className="button" />
+          </form>
+        )}
+      </div>
+
     </div>
   );
 }
