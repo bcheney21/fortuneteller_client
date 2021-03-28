@@ -141,7 +141,7 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
-.future-banner {
+.future-banner{
   font-family: "Rye", cursive;
   font: 70px;
   animation-name: neon;
@@ -164,6 +164,12 @@ body {
   font-family: "Nothing You Could Do", cursive;
   font-size: 30px;
   color: white;
+}
+.modal {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 30px;
+  color: white;
+  text-align: center;
 }
 
 /*---------LOGOUT PAGE-----------------*/
